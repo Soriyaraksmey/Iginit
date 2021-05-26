@@ -7,11 +7,14 @@ const InitalState = {
 const GamesReducer = (state = InitalState, action) => {
     switch (action.type) {
         case 'FETCH_GAMES':
-            return { ...state };
-            break;
+            return {
+                ...state,
+                popular: action.payload.popular,
+                upcomming: action.payload.upcomming,
+                newgame: action.payload.newgame
+            };
         default:
             return { ...state };
-            break;
     }
 }
 export default GamesReducer;

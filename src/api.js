@@ -1,5 +1,4 @@
 const Base_URL = "https://api.rawg.io/api/";
-const APIkey = "16a82efa07f9433099ab10d427e8effb";
 //date format
 let today = new Date();
 const dd = String(today.getDate()).padStart(2, '0');
@@ -10,7 +9,12 @@ const LastYear = `${yyyy - 1}-${mm}-${dd}`;
 const NextYear = `${yyyy + 1}-${mm}-${dd}`;
 //
 
-const popular_games = `games?dates=${LastYear},${CurrentYear}&ordering=-rating&page_size=10`;
+//const popular_games = `games?key=${process.env.REACT_APP_API_KEY}&dates=${LastYear},${CurrentYear}&ordering=-rating&page_size=10`;
+const popular_games = `games?dates=${LastYear},${CurrentYear}&ordering=-rating&page_size=10&?`;
+const upcoming_games = `games?dates=${CurrentYear},${NextYear}&ordering=-added&page_size=10&?`;
+const new_games = `games?dates=${LastYear},${CurrentYear}&ordering=-released&page_size=10&?`;
 
-const Popular_Games_URL = () => Base_URL + popular_games;
+export const PopularGamesURL = () => Base_URL + popular_games;
+export const UpCommingGamesURL = () => Base_URL + upcoming_games;
+export const NewGamesURL = () => Base_URL + new_games;
 
