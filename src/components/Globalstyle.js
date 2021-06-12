@@ -26,8 +26,14 @@ h2{
     font-family: 'Squada One', cursive;
     font-weight: lighter;
 }
+h1{
+    font-size: 4rem;
+    font-family: 'Squada One', cursive;
+    font-weight: lighter; 
+}
 h3{
     font-size: 1.3rem;
+    color: #333;
     padding: 1.5rem 0rem;
 }
 p{
@@ -41,6 +47,10 @@ a{
 img{
         display: block;
     }
+input{
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
  `;
 
 export default GlobalStyle;
